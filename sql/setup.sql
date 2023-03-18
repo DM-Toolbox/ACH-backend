@@ -2,6 +2,21 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS achievements;
+DROP TABLE IF EXISTS magic_a;
+DROP TABLE IF EXISTS magic_b;
+DROP TABLE IF EXISTS magic_c;
+DROP TABLE IF EXISTS magic_d;
+DROP TABLE IF EXISTS magic_e;
+DROP TABLE IF EXISTS magic_f;
+DROP TABLE IF EXISTS magic_g;
+DROP TABLE IF EXISTS magic_h;
+DROP TABLE IF EXISTS magic_i;
+DROP TABLE IF EXISTS resistance;
+DROP TABLE IF EXISTS weapons;
+DROP TABLE IF EXISTS dragons;
+DROP TABLE IF EXISTS figurines;
+DROP TABLE IF EXISTS weapon_warning;
+
 
 CREATE TABLE users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -16,14 +31,676 @@ CREATE TABLE achievements (
   title VARCHAR NOT NULL, 
   detail VARCHAR NOT NULL,
   reward INT NOT NULL,
-  achievement_points INT NOT NULL
+  points INT NOT NULL
 );
+
+CREATE TABLE magic_a (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_b (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_c (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_d (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_e (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_f (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_g (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_h (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE magic_i (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  item VARCHAR NOT NULL,
+  chance VARCHAR NOT NULL
+);
+
+CREATE TABLE resistance (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  resistance_type VARCHAR NOT NULL
+)
+
+CREATE TABLE weapons (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  weapon_type VARCHAR NOT NULL
+)
+
+CREATE TABLE dragons (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  dragon_type VARCHAR NOT NULL,
+  resistance_type VARCHAR NOT NULL
+)
+
+CREATE TABLE figurines (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  figurine_type VARCHAR NOT NULL
+)
+
+CREATE TABLE weapon_warning (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  weapon_type VARCHAR NOT NULL
+)
+
+INSERT INTO magic_a (
+  item,
+  chance
+)
+VALUES
+('Potion of Healing', '01-50'),
+('Spell Scroll (Cantrip)', '51-60'),
+('Potion of Climbing', '61-70'),
+('Spell Scroll (1st Level)', '71-90'),
+('Spell Scroll (2nd Level)', '91-94'),
+('Potion of Greater Healing', '95-98'),
+('Bag of Holding', '99'),
+('Driftglobe', '100');
+
+INSERT INTO magic_b (
+  item,
+  chance
+)
+VALUES
+('Potion of Greater Healing', '01-15'),
+('Potion of Fire Breath', '16-22'),
+('Potion of Resistance', '23-29'),
+('Ammunition, +1', '30-34'),
+('Potion of Animal Friendship', '35-39'),
+('Potion of Hill Giant Strength', '40-44'),
+('Potion of Growth', '45-49'),
+('Potion of Water Breathing', '50-54'),
+('Spell Scroll (2nd Level)', '55-59'),
+('Spell Scroll (3rd Level)', '60-64'),
+('Bag of Holding', '65-67'),
+('Keoghtoms Ointment', '68-70'),
+('Oil of Slipperiness', '71-73'),
+('Dust of Disappearance', '74-75'),
+('Dust of Dryness', '76-77'),
+('Dust of Sneezing and Choking', '78-79'),
+('Elemental Gem', '80-81'),
+('Philter of Love', '82-83'),
+('Alchemy Jug', '84'),
+('Cap of Water Breathing', '85'),
+('Cloak of Manta Ray', '86'),
+('Driftglobe', '87'),
+('Goggles of Night', '88'),
+('Helm of Comprehending Languages', '89'),
+('Immovable Rod', '90'),
+('Lantern of Revealing', '91'),
+('Mariners Lantern', '92'),
+('Mithral Armor', '93'),
+('Potion of Poison', '94'),
+('Ring of Swimming', '95'),
+('Robe of Useful Items', '96'),
+('Rope of Climbing', '97'),
+('Saddle of the Cavalier', '98'),
+('Wand of Magic Detection', '99'),
+('Wand of Secrets', '100');
+
+INSERT INTO magic_c (
+  item,
+  chance
+)
+VALUES 
+('Potion of Superior Healing', '01-15'),
+('Spell Scroll (4th Level)', '16-22'),
+('Ammunition, +2', '23-27'),
+('Potion of Clairvoyance', '28-32'),
+('Potion of Diminution', '33-37'),
+('Potion of Gaseous Form', '38-42'),
+('Potion of Frost Giant Strength', '43-47'),
+('Potion of Stone Giant Strength', '48-52'),
+('Potion of Heroism', '53-57'),
+('Potion of Invulnerability', '58-62'),
+('Potion of Mind Reading', '63-67'),
+('Spell Scroll (5th Level)', '68-72'),
+('Elixir of Health', '73-75'),
+('Oil of Etherealness', '76-78'),
+('Potion of Fire Giant Strength', '79-81'),
+('Quaals Feather Token', '82-84'),
+('Scroll of Protection', '85-87'),
+('Bag of Beans', '88-89'),
+('Bead of Force', '90-91'),
+('Chime of Opening', '92'),
+('Decanter of Endless Water', '93'),
+('Eyes of Minute Seeing', '94'),
+('Folding Boat', '95'),
+('Hewards Handy Haversack', '96'),
+('Horseshoes of Speed', '97'),
+('Necklace of Fireballs', '98'),
+('Periapt of Health', '99'),
+('Sending Stones', '100');
+
+INSERT INTO magic_d (
+  item,
+  chance
+)
+VALUES
+('Potion of Supreme Healing', '01-20'),
+('Potion of Invisibility', '21-30'),
+('Potion of Speed', '31-40'),
+('Spell Scroll (6th Level)', '41-50'),
+('Spell Scroll (7th Level)', '51-57'),
+('Ammunition, +3', '58-62'),
+('Oil of Sharpness', '63-67'),
+('Potion of Flying', '68-72'),
+('Potion of Cloud Giant Strength', '73-77'),
+('Potion of Longevity', '78-82'),
+('Potion of Vitality', '83-87'),
+('Spell Scroll (8th Level)', '88-92'),
+('Horseshoes of Zephyr', '93-95'),
+('Nolzurs Marvelous Pigments', '96-98'),
+('Bag of Devouring', '99'),
+('Portable Hole', '100');
+
+INSERT INTO magic_e (
+  item,
+  chance
+)
+VALUES
+('Spell Scroll (8th Level)', '01-30'),
+('Potion of Storm Giant Strength', '31-55'),
+('Potion of Supreme Healing', '56-70'),
+('Spell Scroll (9th Level)', '71-85'),
+('Universal Solvent', '86-93'),
+('Arrow of Slaying', '94-98'),
+('Sovereign Glue', '99-100');
+
+INSERT INTO magic_f (
+  item,
+  chance
+)
+VALUES
+-- //TODO Roll from Weapons Table
+('Weapon, +1', '01-15'),
+('Shield, +1', '16-18'),
+('Sentinal Shield', '19-21'),
+('Amulet of Proof Against Detection and Location', '22-23'),
+('Boots of Elvenkind', '24-25'),
+('Boots of Striding and Springing', '26-27'),
+('Bracers of Archery', '28-29'),
+('Brooch of Shielding', '30-31'),
+('Broom of Flying', '32-33'),
+('Cloak of Elvenkind', '34-35'),
+('Cloak of Protection', '36-37'),
+('Gauntlets of Ogre Power', '38-39'),
+('Hat of Disguise', '40-41'),
+('Javelin of Lightning', '42-43'),
+('Pearl of Power', '44-45'),
+('Rod of Pact Keeper, +1', '46-47'),
+('Slippers of Spider Climbing', '48-49'),
+('Staff of the Adder', '50-51'),
+('Staff of the Python', '52-53'),
+('Sword of Vengeance', '54-55'),
+('Trident of Fish Command', '56-57'),
+('Wand of Magic Missiles', '58-59'),
+('Wand of the War Mage, +1', '60-61'),
+('Wand of Web', '62-63'),
+-- //TODO Add Table for Weapons of Warning
+('Weapon of Warning', '64-65'),
+('Adamantine Armor (Chain Mail)', '66'),
+('Adamantine Armor (Chain Shirt)', '67'),
+('Adamantine Armor (Scale Mail)', '68'),
+('Bag of Tricks (Grey)', '69'),
+('Bag of Tricks (Rust)', '70'),
+('Bag of Tricks (Tan)', '71'),
+('Boots of the Winterlands', '72'),
+('Circlet of Blasting', '73'),
+('Deck of Illusions', '74'),
+('Eversmoking Bottle', '75'),
+('Eyes of Charming', '76'),
+('Eyes of the Eagle', '77'),
+('Figurine of Wondrous Power (Silver Raven)', '78'),
+('Gem of Brightness', '79'),
+('Gloves of Missile Snaring', '80'),
+('Gloves of Swimming and Climbing', '81'),
+('Gloves of Thievery', '82'),
+('Headband of Intellect', '83'),
+('Helm of Telepathy', '84'),
+('Instrument of the Bards (Doss Lute)', '85'),
+('Instrument of the Bards (Fochlucan Bandore)', '86'),
+('Instrument of the Bards (Mac-Fuimidh Cittern)', '87'),
+('Medallion of Thoughts', '88'),
+('Necklace of Adaptation', '89'),
+('Periapt of Wound Closure', '90'),
+('Pipes of Haunting', '91'),
+('Pipes of the Sewers', '92'),
+('Ring of Jumping', '93'),
+('Ring of Mind Shielding', '94'),
+('Ring of Warmth', '95'),
+('Ring of Water Walking', '96'),
+('Quiver of Ehlonna', '97'),
+('Stone of Good Luck', '98'),
+('Wind Fan', '99'),
+('Winged Boots', '100');
+
+INSERT INTO magic_g (
+  item, 
+  chance
+)
+VALUES
+('Weapon, +2', '01-11'),
+-- //TODO Create table for Figurine of Wondrous Power
+('Figurine of Wondrous Power', '12-14'),
+('Adamantine Armor (Breastplate)', '15'),
+('Adamantine Armor (Splint)', '16'),
+('Amulet of Health', '17'),
+('Armor of Vulnerability', '18'),
+('Arrow-Catching Shield', '19'),
+('Belt of Dwarvenkind', '20'),
+('Belt of Hill Giant Strength', '21'), 
+('Berserker Axe', '22'),
+('Boots of Levitation', '23'),
+('Boots of Speed', '24'),
+('Bowl of Commanding Water Elementals', '25'), 
+('Bracers of Defense', '26'),
+('Brazier of Commanding Fire Elementals', '27'),
+('Cape of the Mountebank', '28'),
+('Censor of Controlling Air Elementals', '29'),
+('Armor, +1 Chain Mail', '30'),
+-- //TODO Roll from Resistance Table
+('Armor of Resistance (Chain Mail)', '31'),
+('Armor of Resistance (Chain Shirt)', '32'),
+('Armor, +1 Chain Shirt', '33'),
+('Cloak of Displacement', '34'),
+('Cloak of the Bat', '35'),
+('Cube of Force', '36'),
+('Daerns Instant Fortress', '37'),
+('Dagger of Venom', '38'),
+('Dimensional Shackles', '39'),
+('Dragon Slayer', '40'),
+('Elven Chain', '41'),
+('Flame Tongue', '42'),
+('Gem of Seeing', '43'), 
+('Giant Slayer', '44'), 
+('Clamoured Studded Leather', '45'),
+('Helm of Teleportation', '46'),
+('Horn of Blasting', '47'),
+('Horn of Valhalla (Silver or Brass)', '48'),
+('Instrument of the Bards (Canaithmandolin)', '49'),
+('Instrument of the Bards (Cii Lyre)', '50'),
+('Ioun Stone (Awareness)', '51'),
+('Ioun Stone (Protection)', '52'),
+('Ioun Stone (Reserve)', '53'),
+('Ioun Stone (Sustenance)', '54'),
+('Iron Bands of Bilarro', '55'),
+('Armor, +1 Leather', '56'), 
+('Armor of Resistance (Leather)', '57'),
+('Mace of Disruption', '58'),
+('Mace of Smiting', '59'),
+('Mace of Terror', '60'), 
+('Mantle of Spell Resistance', '61'),
+('Necklace of Prayer Beads', '62'), 
+('Periapt of Proof against Poison', '63'),
+('Ring of Animal Influence', '64'),
+('Ring of Evasion', '65'),
+('Ring of Feather Falling', '66'),
+('Ring of Free Action', '67'),
+('Ring of Protection', '68'),
+-- //TODO Roll from Resistance Table 
+('Ring of Resistance', '69'),
+('Ring of Spell Storing', '70'),
+('Ring of the Ram', '71'),
+('Ring of X-Ray Vision', '72'),
+('Robe of Eyes', '73'),
+('Rod of Rulership', '74'),
+('Rod of the Pact Keeper, +2', '75'),
+('Rope of Entanglement', '76'),
+('Armor, +1 Scale Mail', '77'),
+-- //TODO Roll from Resistance Table
+('Armor of Resistance (Scale Mail)', '78'),
+('Shield, +2', '79'),
+('Shield of Missile Attraction', '80'),
+('Staff of Charming', '81'),
+('Staff of Healing', '82'),
+('Staff of Swarming Insects', '83'),
+('Staff of Woodlands', '84'),
+('Staff of Withering', '85'),
+('Stone of Controlling Earth Elementals', '86'),
+('Sun Blade', '87'),
+('Sword of Life Stealing', '88'),
+('Sword of Wounding', '89'),
+('Tentacle Rod', '90'),
+-- //TODO Roll from Weapon Table
+('Vicious Weapon', '91'),
+('Wand of Binding', '92'),
+('Wand of Enemy Detection', '93'),
+('Wand of Fear', '94'),
+('Wand of Fireballs', '95'),
+('Wand of Lightning Bolts', '96'),
+('Wand of Paralysis', '97'),
+('Wand of the War Mage', '98'),
+('Wand of Wonder', '99'),
+('Wings of Flying', '100');
+
+INSERT INTO magic_h (
+  item,
+  chance
+)
+VALUES
+-- //TODO Roll from Weapon Table
+('Weaopon, +3', '01-10'),
+('Amulet of Planes', '11-12'),
+('Carpet of Flying', '13-14'),
+('Crystal Ball (Very Rare Version)', '15-16'),
+('Ring of Regeneration', '17-18'),
+('Ring of Shooting Stars', '19-20'),
+('Ring of Telekinesis', '21-22'),
+('Robe of Scintillating Colors', '23-24'),
+('Robe of Stars', '25-26'),
+('Rod of Absorption', '27-28'),
+('Rod of Alertness', '29-30'),
+('Rod of Security', '31-32'),
+('Rod of the Pact Keeper, +3', '33-34'),
+('Scimitar of Speed', '35-36'),
+('Shield, +3', '37-38'),
+('Staff of Fire', '39-40'),
+('Staff of Frost', '41-42'),
+('Staff of Power', '43-44'),
+('Staff of Striking', '45-46'),
+('Staff of Thunder and Lightning', '47-48'),
+('Sword of Sharpness', '49-50'),
+('Wand of Polymorph', '51-52'),
+('Wand of the War Mage, +3', '53-54'),
+('Adamantine Armor (Half Plate)', '55'),
+('Adamantine Armor (Plate)', '56'),
+('Animated Shield', '57'),
+('Belt of Fire Giant Strength', '58'),
+('Belt of Frost (or Stone) Giant Strength', '59'),
+('Armor, +1 Breastplate', '60'),
+-- //TODO Roll from Resistance Table
+('Armor of Resistance (Breastplate)', '61'),
+('Candle of Invocation', '62'),
+('Armor, +2 Chainmail', '63'),
+('Armor, +2 Chanshirt', '64'),
+('Cloak of Arachnida', '65'),
+('Dancing Sword', '66'),
+('Demon Armor', '67'),
+('Dragon Scale Mail', '68'),
+('Dwarven Plate', '69'),
+('Dwarven Thrower', '70'),
+('Efreeti Bottle', '71'),
+('Figurine of Wondrous Power (Obsidian Steed)', '72'),
+('Frost Band', '73'),
+('Helm of Brilliance', '74'),
+('Horn of Valhalla (Bronze)', '75'),
+('Instrument of the Bards (Anstruth Harp)', '76'),
+('Ioun Stone (Absorption)', '77'),
+('Ioun Stone (Agility)', '78'),
+('Ioun Stone (Fortitude)', '79'),
+('Ioun Stone (Insight)', '80'),
+('Ioun Stone (Intellect)', '81'),
+('Ioun Stone (Leadership)', '82'),
+('Ioun Stone (Strength)', '83'),
+('Armor, +2 Leather', '84'),
+('Manual of Bodily Health', '85'),
+('Manual of Gainful Exercise', '86'),
+('Manual of Golems', '87'), 
+('Manual of Quickness of Action', '88'),
+('Mirror of Life Trapping', '89'),
+('Nine Lives Stealer', '90'),
+('Oathbow', '91'),
+('Armor, +2 Scale Mail', '92'),
+('Spellguard Shield', '93'),
+('Armor, +1 Splint', '94'),
+-- //TODO Roll from Resistance Table
+('Armor of Resistance (Splint)', '95'),
+('Armor, +1 Studded Leather', '96'),
+-- //TODO Roll from Resistance Table
+('Armor of Resistance (Studded Leather)', '97'),
+('Tome of Clear Thought', '98'),
+('Tome of Leadership and Influence', '99'),
+('Tome of Understanding', '100');
+
+INSERT INTO magic_i (
+  item,
+  chance
+)
+VALUES
+('Defender', '01-05'),
+('Hammer of Thunderbolts', '06-10'),
+('Luck Blade', '11-15'),
+('Sword of Answering', '16-20'),
+('Holy Avenger', '21-23'), 
+('Ring of Djinni Summoning', '24-26'),
+('Ring of Invisibility', '27-29'),
+('Ring of Spell Turning', '30-32'),
+('Rod of Lordly Might', '36-38'),
+('Vorpal Sword', '39-41'),
+('Belt of Cloud Giant Strength', '42-43'),
+('Armor, +2 Breastplate', '44-45'),
+('Armor, +3 Chain Mail', '46-47'),
+('Armor, +3 Chain Shirt', '48-49'),
+('Cloak of Invisibility', '50-51'),
+('Crystal Ball (Legendary Version)', '52-53'),
+('Armor, +1 Half Plate', '54-55'),
+('Iron Flask', '56-57'),
+('Armor, +3 Leather', '58-59'),
+('Armor, +1 Plate', '60-61'),
+('Robe of the Archmagi', '62-63'),
+('Rod of Resurrection', '64-65'),
+('Armor, +1 Scale Mail', '66-67'),
+('Scarab of Protection', '68-69'),
+('Armor, +2 Splint', '70-71'),
+('Armor, +2 Studded Leather', '72-73'),
+('Well of Many Worlds', '74-75'),
+-- //TODO Roll from a Magic Armor Table d12
+('Magic Armor', '76'),
+('Apparatus of Kwalish', '77'),
+('Armor of Invulnerability', '78'),
+('Belt of Storm Giant Strength', '79'),
+('Cubic Gate', '80'),
+('Deck of Many Things', '81'),
+('Efreeti Chain', '82'),
+-- //TODO Roll from Resistance Table
+('Armor of Resistance (Half Plate)', '83'),
+('Horn of Valhalla (Iron)', '84'),
+('Instrument of the Bards (Ollamh Harp)', '85'),
+('Ioun Stone (Greater Absorption)', '86'),
+('Ioun Stone (Mastery)', '87'),
+('Ioun Stone (Regeneration)', '88'),
+('Plate Armor of Etherealness', '89'),
+-- //TODO Roll from Resistance Table
+('Plate Armor of Resistance', '90'),
+('Ring of Air Elemental Command', '91'),
+('Ring of Earth Elemental Command', '92'),
+('Ring of Fire Elemental Command', '93'), 
+('Ring of Three Wishes', '94'),
+('Ring of Water Elemental Command', '95'),
+('Sphere of Annihilation', '96'),
+('Talisman of Pure Good', '97'),
+('Talisman of the Sphere', '98'),
+('Talisman of Ultimate Evil', '99'),
+('Tome of the Stilled Tongue', '100');
+
+INSERT INTO resistance (
+  resistance_type
+)
+VALUES
+('Acid'),
+('Cold'),
+('Fire'),
+('Force'),
+('Lightning'),
+('Necrotic'),
+('Poison'),
+('Psychic'),
+('Radiance'),
+('Thunder');
+
+INSERT INTO weapons (
+  weapon_type
+)
+VALUES
+('Club'),
+('Dagger'),
+('Greatclub'),
+('Handaxe'),
+('Javelin'),
+('Light Hammer'),
+('Mace'),
+('Quarterstaff'),
+('Sickle'),
+('Spear'),
+('Yklwa'),
+('Boomerang'),
+('Crossbow, Light'),
+('Dart'),
+('Shortbow'),
+('Sling'),
+('Battleaxe'),
+('Flail'),
+('Glaive'),
+('Greatsword'),
+('Halberd'),
+('Lance'),
+('Longsword'),
+('Maul'),
+('Morningstar'),
+('Pike'),
+('Rapier'),
+('Scimitar'),
+('Shortword'),
+('Trident'),
+('War Pick'),
+('Warhammer'),
+('Whip'),
+('Blowgun'),
+('Crossbow, Hand'),
+('Crossbow, Heavy'),
+('Longbow'),
+('Net'),
+('Pistol'),
+('Musket'),
+('Pistol, Automatic'),
+('Revolver'),
+('Rifle, Hunting'),
+('Rifle, Automatic'),
+('Shotgun'),
+('Laser Pistol'),
+('Antimatter Rifle'),
+('Laser Rifle');
+
+INSERT INTO dragons (
+  dragon_type,
+  resistance_type
+)
+VALUES
+('Black', 'Acid'),
+('Gold', 'Fire'),
+('Blue', 'Lightning'),
+('Green', 'Poison'),
+('Brass', 'Fire'),
+('Red', 'Fire'),
+('Bronze', 'Lightning'),
+('Silver', 'Cold'),
+('Copper', 'Acid'),
+('White', 'Cold')
+
+INSERT INTO figurines (
+  figurine_type
+)
+VALUES
+('Bronze Griffon'),
+('Ebony Fly'),
+('Golden Lions'),
+('Ivory Goats'),
+('Marble Elephant'),
+('Obsidian Steed'),
+('Onyx Dog'),
+('Serpentine Owl'),
+('Silver Raven');
+
+INSERT INTO weapon_warning (
+  weapon_type
+)
+VALUES
+('Club of Warning'),
+('Dagger of Warning'),
+('Greatclub of Warning'),
+('Handaxe of Warning'),
+('Javelin of Warning'),
+('Light Hammer of Warning'),
+('Mace of Warning'),
+('Quarterstaff of Warning'),
+('Sickle of Warning'),
+('Spear of Warning'),
+('Yklwa of Warning'),
+('Boomerang of Warning'),
+('Crossbow, Light of Warning'),
+('Dart of Warning'),
+('Shortbow of Warning'),
+('Sling of Warning'),
+('Battleaxe of Warning'),
+('Flail of Warning'),
+('Glaive of Warning'),
+('Greatsword of Warning'),
+('Halberd of Warning'),
+('Lance of Warning'),
+('Longsword of Warning'),
+('Maul of Warning'),
+('Morningstar of Warning'),
+('Pike of Warning'),
+('Rapier of Warning'),
+('Scimitar of Warning'),
+('Shortword of Warning'),
+('Trident of Warning'),
+('War Pick of Warning'),
+('Warhammer of Warning'),
+('Whip of Warning'),
+('Blowgun of Warning'),
+('Crossbow, Hand of Warning'),
+('Crossbow, Heavy of Warning'),
+('Longbow of Warning'),
+('Net of Warning'),
+('Pistol of Warning'),
+('Musket of Warning'),
+('Pistol, Automatic of Warning'),
+('Revolver of Warning'),
+('Rifle, Hunting of Warning'),
+('Rifle, Automatic of Warning'),
+('Shotgun of Warning'),
+('Laser Pistol of Warning'),
+('Antimatter Rifle of Warning'),
+('Laser Rifle of Warning');
 
 INSERT INTO achievements (
   title,
   detail,
   reward,
-  achievement_points
+  points
 )
 VALUES
   ('You Shall Be Called Tundra!', 'Acquired A Mount', 1, 2),
@@ -208,3 +885,5 @@ VALUES
   ('A Farewell To Arms', 'Willingly Remove A Limb', 2, 0),
   ('Bottoms Up!', 'Win A Drinking Contest', 1, 1),
   ('Objection!', 'Win A Legal Case', 1, 5);
+
+
