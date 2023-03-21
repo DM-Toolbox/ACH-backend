@@ -14,11 +14,14 @@ describe('achievements', () => {
   });
 
   it('GET achievements should return list of achievements', async () => {
-    const resp = await request(app).get('/achievements');
+    const resp = await request(app).get('/api/v1/achievements');
     expect(resp.status).toBe(200);
     expect(resp.body[0]).toEqual({
-      id: expect.any(String),
-      title: expect.any(String),
+      title: 'You Shall Be Called Tundra!',
+      detail: 'Acquired A Mount',
+      reward: 1,
+      points: 2,
+      id: '1',
     });
   });
 });
