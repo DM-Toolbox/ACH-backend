@@ -440,7 +440,7 @@ INSERT INTO magic_h (
 )
 VALUES
 -- //TODO Roll from Weapon Table
-(1, 'Weaopon, +3', '01-10'),
+(1, 'Weapon, +3', '01-10'),
 (2, 'Amulet of Planes', '11-12'),
 (3, 'Carpet of Flying', '13-14'),
 (4, 'Crystal Ball (Very Rare Version)', '15-16'),
