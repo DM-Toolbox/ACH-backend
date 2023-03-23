@@ -17,6 +17,8 @@ DROP TABLE IF EXISTS dragons;
 DROP TABLE IF EXISTS figurines;
 DROP TABLE IF EXISTS weapon_warning;
 DROP TABLE IF EXISTS mounts;
+DROP TABLE IF EXISTS chests;
+DROP TABLE IF EXISTS rewards;
 
 
 CREATE TABLE users (
@@ -133,6 +135,17 @@ CREATE TABLE mounts (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   die_value INTEGER NOT NULL, 
   mount_type VARCHAR NOT NULL
+);
+
+CREATE TABLE chests (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  die_value INTEGER NOT NULL,
+  chest_type VARCHAR NOT NULL 
+);
+
+CREATE TABLE rewards (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  rewards VARCHAR NOT NULL
 );
 
 INSERT INTO magic_a (
@@ -745,6 +758,36 @@ VALUES
 (6, 'Mastiff'),
 (7, 'Pony'),
 (8, 'Warhorse');
+
+INSERT INTO chests (
+  die_value,
+  chest_type
+)
+VALUES
+(1, 'Wood Chest'),
+(2, 'Iron Chest'),
+(3, 'Steel Chest'),
+(4, 'Silver Chest'),
+(5, 'Gold Chest'),
+(6, 'Electrum Chest'),
+(7, 'Platinum Chest'),
+(8, 'Mithral Chest'),
+(9, 'Adamantine Chest');
+
+INSERT INTO rewards (
+  rewards
+)
+VALUES
+('Magic Table A'),
+('Magic Table B'),
+('Magic Table C'),
+('Magic Table D'),
+('Magic Table E'),
+('Magic Table F'),
+('Magic Table G'),
+('Magic Table H'),
+('Magic Table I'),
+('Mounts Table');
 
 INSERT INTO achievements (
   title,
