@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "33f89893-9d6b-4a86-97bc-5f0674d419c4",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:7890/api/v1/chestRewards/wood",
+    "url": "http://localhost:7890/api/v1/chestRewards/wood",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-03-24T19:24:37.378Z",
+    "modified": "2023-03-24T19:24:37.378Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
